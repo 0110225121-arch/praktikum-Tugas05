@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box2 Layout - Moqzilla</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Bingkai utama browser */
+  .browser {
+    width: 850px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  }
+
+  /* Bar bagian atas */
+  .topbar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #e6e6e6;
+    background: #fafafa;
+  }
+
+  .title {
+    flex: 0 0 auto;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+  }
+
+  .nav {
+    display: flex;
+    gap: 6px;
+    margin-left: 8px;
+  }
+
+  .nav button {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #eee;
+    cursor: pointer;
+  }
+
+  .address {
+    flex: 1;
+    margin-left: 10px;
+  }
+
+  .address input {
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    font-weight: bold;
+    color: #1a73e8;
+  }
+
+  /* Area konten */
+  .content {
+    padding: 15px;
+    display: grid;
+    grid-template-areas:
+      "yellow orange orange"
+      "green main blue"
+      "footer footer footer";
+    grid-template-columns: 120px 1fr 150px;
+    grid-template-rows: 50px 350px 70px;
+    gap: 12px;
+  }
+
+  /* Kotak-kotak warna sesuai gambar */
+  .yellow { 
+    grid-area: yellow; 
+    background: #f7e36b; 
+    border-radius: 5px; 
+    border: 2px solid black;
+  }
+
+  .orange { 
+    grid-area: orange; 
+    background: #f76b3f; 
+    border-radius: 5px; 
+    border: 2px solid black;
+  }
+
+  .green { 
+    grid-area: green; 
+    background: #a8d8a8; 
+    border-radius: 5px; 
+    border: 2px solid black;
+  }
+
+  .blue { 
+    grid-area: blue; 
+    background: #6fd8ff; 
+    border-radius: 5px; 
+    border: 2px solid black;
+  }
+
+  .main { 
+    grid-area: main; 
+    background: #cccccc; 
+    border-radius: 5px;
+    border: 2px solid black; 
+  }
+
+  .footer { 
+    grid-area: footer; 
+    background: #3b70ff; 
+    border-radius: 5px; 
+    border: 2px solid black;
+  }
+
+</style>
+</head>
+<body>
+  <div class="browser">
+    <div class="topbar">
+      <div class="title">Moqzilla</div>
+      <div class="nav">
+        <button>&larr;</button>
+        <button>&rarr;</button>
+        <button>&#8635;</button>
+      </div>
+      <div class="address">
+        <input type="text" value="http://box2.com">
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="yellow"></div>
+      <div class="orange"></div>
+      <div class="green"></div>
+      <div class="main"></div>
+      <div class="blue"></div>
+      <div class="footer"></div>
+    </div>
+  </div>
+</body>
+</html>
